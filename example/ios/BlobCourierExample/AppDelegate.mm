@@ -6,7 +6,7 @@
 
 #import <React/RCTAppSetupUtils.h>
 
-// #if RCT_NEW_ARCH_ENABLED
+#if RCT_NEW_ARCH_ENABLED
 #import <React/RCTDataRequestHandler.h>
 #import <React/RCTHTTPRequestHandler.h>
 #import <React/RCTFileRequestHandler.h>
@@ -32,9 +32,9 @@
   facebook::react::ContextContainer::Shared _contextContainer;
 }
 @end
-// #endif
+#endif
 
-@implementation AppDelegate () <RCTCxxBridgeDelegate> {
+@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -44,13 +44,13 @@
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
 
-// #if RCT_NEW_ARCH_ENABLED
+#if RCT_NEW_ARCH_ENABLED
   _contextContainer = std::make_shared<facebook::react::ContextContainer const>();
   _reactNativeConfig = std::make_shared<facebook::react::EmptyReactNativeConfig const>();
   _contextContainer->insert("ReactNativeConfig", _reactNativeConfig);
   _bridgeAdapter = [[RCTSurfacePresenterBridgeAdapter alloc] initWithBridge:bridge contextContainer:_contextContainer];
   bridge.surfacePresenter = _bridgeAdapter.surfacePresenter;
-// #endif
+#endif
 
   UIView *rootView = RCTAppSetupDefaultRootView(bridge, @"BlobCourierExample", nil);
 
@@ -77,7 +77,7 @@
 #endif
 }
 
-// #if RCT_NEW_ARCH_ENABLED
+#if RCT_NEW_ARCH_ENABLED
 
 #pragma mark - RCTCxxBridgeDelegate
 
@@ -169,7 +169,6 @@
   return [moduleClass new];
 }
 
-// #endif
-}
+#endif
 
 @end
