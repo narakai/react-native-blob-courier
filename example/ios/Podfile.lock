@@ -283,7 +283,7 @@ PODS:
   - React-logger (0.68.1):
     - glog
   - react-native-blob-courier (3.0.9):
-    - React
+    - React-Core
   - React-perflogger (0.68.1)
   - React-RCTActionSheet (0.68.1):
     - React-Core/RCTActionSheetHeaders (= 0.68.1)
@@ -528,7 +528,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 4a4bae5671b064a2248a690cf75957669489d08c
   React-jsinspector: 218a2503198ff28a085f8e16622a8d8f507c8019
   React-logger: f79dd3cc0f9b44f5611c6c7862badd891a862cf8
-  react-native-blob-courier: 2c0e45263f68dce6fa1346f060b7504d463d8890
+  react-native-blob-courier: d68d81335e9faf97149db1486a0a5200e3d120d2
   React-perflogger: 30ab8d6db10e175626069e742eead3ebe8f24fd5
   React-RCTActionSheet: 4b45da334a175b24dabe75f856b98fed3dfd6201
   React-RCTAnimation: d6237386cb04500889877845b3e9e9291146bc2e
@@ -545,6 +545,6 @@ SPEC CHECKSUMS:
   Yoga: 17cd9a50243093b547c1e539c749928dd68152da
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: fcc5c587eba95d0bfeaba69416b162293e174d1f
+PODFILE CHECKSUM: 29edda1ad33d63fa5df61119e594ec20aaadb40e
 
 COCOAPODS: 1.11.2
