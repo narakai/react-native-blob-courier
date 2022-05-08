@@ -4,7 +4,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '11.0'
 install! 'cocoapods', :deterministic_uuids => false
 
-# use_frameworks! :linkage => :static
+# use_frameworks!
 use_modular_headers!
 
 pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec', :modular_headers => false
@@ -12,7 +12,7 @@ pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.
 target 'BlobCourierExample' do
   config = use_native_modules!
 
-  pod 'react-native-blob-courier', :path => '../..', :modular_headers => true
+  # pod 'react-native-blob-courier', :path => '../..', :modular_headers => true
 
   # Flags change depending on the env values.
   flags = get_default_flags()
@@ -20,8 +20,8 @@ target 'BlobCourierExample' do
   use_react_native!(
     :path => config[:reactNativePath],
     # to enable hermes on iOS, change `false` to `true` and then install pods
-    :hermes_enabled => flags[:hermes_enabled],
-    :fabric_enabled => flags[:fabric_enabled],
+    :hermes_enabled => false, # flags[:hermes_enabled],
+    :fabric_enabled => true, # flags[:fabric_enabled],
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
